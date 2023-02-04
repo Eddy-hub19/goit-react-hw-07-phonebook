@@ -24,7 +24,7 @@ export default function Contact({ id, name, number }) {
       >
         Delete
       </ContactBtn>
-      {isDeleting ? 'Deleting...' : 'Delete'}
+      {isDeleting && 'Deleting...'}
     </ContactItem>
   );
 }

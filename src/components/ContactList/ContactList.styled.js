@@ -3,8 +3,8 @@ import styled from 'styled-components';
 // ContactList
 
 export const List = styled.ul`
-  margin: 0 auto;
   padding: 0;
+  width: 100%;
 `;
 
 export const ContactItem = styled.li`
@@ -13,6 +13,7 @@ export const ContactItem = styled.li`
   align-items: center;
   margin-top: 10px;
   cursor: pointer;
+  width: 100%;
 
   :hover {
     background: #666f6e;
