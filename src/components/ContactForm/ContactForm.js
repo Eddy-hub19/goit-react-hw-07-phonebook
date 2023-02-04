@@ -1,13 +1,13 @@
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { addContact } from 'redux/contacts/contactSlice';
-import { getContacts } from 'redux/contacts/selectors';
+import { addContact } from 'redux/contacts/operations';
+import { selectContacts } from 'redux/contacts/selectors';
 import { Label, Input, Submit } from '../App.styled';
 
 export default function ContactForm() {
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
-  const contacts = useSelector(getContacts);
+  const contacts = useSelector(selectContacts);
   const dispatch = useDispatch();
 
   const resetForm = () => {
@@ -15,8 +15,8 @@ export default function ContactForm() {
     setNumber('');
   };
 
-  const handleChange = evt => {
-    const { name, value } = evt.target;
+  const handleChange = e => {
+    const { name, value } = e.target;
     switch (name) {
       case 'name':
         setName(value);
